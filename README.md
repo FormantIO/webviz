@@ -17,20 +17,21 @@ Please see the individual package READMEs for details on how to install and use 
 
 ## Developing
 
-- `npm run bootstrap` in the root directory to install dependencies.
-- `npm run build` to run a single build or `npm run watch` to watch and build.
-- `npm run docs` to run the docs app (e.g. go to http://localhost:8080/try to open Webviz). Requires `build` to be run first.
-- `npm run storybook` to run storybook. Requires `build` to be run first.
-- `npm run screenshot-debug` to generate screenshots from stories.
-- `npm run lint` to run the linters (and `npm run lint:fix` to automatically fix issues).
-- `npm run flow` to run Flow.
-- `npm run flow-typed-rebuild` to update the flow-typed definitions (any time when changing packages).
-- `npm test` to run tests.
+- `yarn bootstrap` in the root directory to install dependencies.
+- `yarn build` to run a single build or `yarn watch` to watch and build.
+- `yarn dev-start` in the root directory to run locally.
+- `yarn docs` to run the docs app (e.g. go to http://localhost:8080/try to open Webviz). Requires `build` to be run first.
+- `yarn storybook` to run storybook. Requires `build` to be run first.
+- `yarn screenshot-debug` to generate screenshots from stories.
+- `yarn lint` to run the linters (and `npm run lint:fix` to automatically fix issues).
+- `yarn flow` to run Flow.
+- `yarn flow-typed-rebuild` to update the flow-typed definitions (any time when changing packages).
+- `yarn test` to run tests.
 
 If you have the right permissions, you can publish:
 
-- `npm run publish` to publish npm packages.
-- `npm run docs-deploy` to deploy that statically hosted website (this is also done automatically in CI on the master branch).
+- `yarn publish` to publish npm packages.
+- `yarn docs-deploy` to deploy that statically hosted website (this is also done automatically in CI on the master branch).
 
 ## Contributing
 
