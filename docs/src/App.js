@@ -72,8 +72,6 @@ export default function App() {
     <MDXProvider components={components}>
       <Router history={history}>
         <Switch>
-          <Route path="/docs" component={Docs} />
-          <Route exact path="/" component={Landing} />
           <Redirect to="/" />
         </Switch>
       </Router>
