@@ -1,6 +1,9 @@
 {
   "name": "root",
   "private": true,
+  "browserslist": [
+    "defaults"
+  ],
   "engines": {
     "node": ">=10.0.0 <12.0.0",
     "npm": ">=6.0.0"
@@ -114,8 +117,9 @@
   },
   "dependencies": {},
   "scripts": {
-    "bootstrap": "npm install && lerna bootstrap --hoist \"{react,react-dom}\"",
-    "install-ci": "npm ci && lerna bootstrap --hoist \"{react,react-dom}\"",
+    "bootstrap": "yarn install && lerna bootstrap --hoist \"{react,react-dom}\"",
+    "dev-start": "yarn build && DEV_SERVER=true webpack-dev-server",
+    "install-ci": "yarn ci && lerna bootstrap --hoist \"{react,react-dom}\"",
     "build": "lerna run build && webpack",
     "watch": "lerna run watch --parallel",
     "clean": "lerna run clean",
