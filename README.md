@@ -40,7 +40,7 @@ PRs, bug reports, and feature requests are welcome! Please observe [CONTRIBUTING
 
 ## Formant
 
-A few notes about deployment:
+### Deployment
 
 - Both Webviz and bag endpoints have to be HTTPS.
 
@@ -64,3 +64,13 @@ S3 CORS configuration for bag endpoint
 </CORSRule>
 </CORSConfiguration>
 ```
+
+### Integration
+
+- Remote bag URLs are specified with the `remote-bag-url` parameter.
+
+- Remote bag URLs must be escaped with `encodeURIComponent()` or equivalent.
+
+- Cross origin URLs must include `https://` (`?remote-bag-url=https%3A%2F%2Fexample.com%2Fbags%2Fbag.bag`).
+
+- Relative paths are allowed on the same origin (`?remote-bag-url=%2Fbags%2Fbag.bag`).
