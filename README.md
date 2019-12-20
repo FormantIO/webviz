@@ -36,3 +36,31 @@ If you have the right permissions, you can publish:
 ## Contributing
 
 PRs, bug reports, and feature requests are welcome! Please observe [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) when making a contribution.
+
+
+## Formant
+
+A few notes about deployment:
+
+- Both Webviz and bag endpoints have to be HTTPS.
+
+- CORS configuration on bag side has to allow cross origin, `HEAD, GET` methods, and expose `ETag, Content-Type, Content-Length, and Accept-Ranges` headers.
+
+- Remote bag viewer only verified working on Chrome.
+
+S3 CORS configuration for bag endpoint
+```
+<CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+<CORSRule>
+    <AllowedOrigin>*</AllowedOrigin>
+    <AllowedMethod>GET</AllowedMethod>
+    <AllowedMethod>HEAD</AllowedMethod>
+    <MaxAgeSeconds>3000</MaxAgeSeconds>
+    <ExposeHeader>ETag</ExposeHeader>
+    <ExposeHeader>Content-Type</ExposeHeader>
+    <ExposeHeader>Content-Length</ExposeHeader>
+    <ExposeHeader>Accept-Ranges</ExposeHeader>
+    <AllowedHeader>*</AllowedHeader>
+</CORSRule>
+</CORSConfiguration>
+```
